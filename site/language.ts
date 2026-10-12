@@ -8,7 +8,7 @@ export function initLanguage(): void {
     for (const el of document.querySelectorAll<HTMLElement>('[data-zh]')) el.textContent = el.dataset.zh ?? '';
     for (const el of document.querySelectorAll<HTMLElement>('[data-zh-label]')) el.setAttribute('aria-label', el.dataset.zhLabel ?? '');
     document.querySelector<HTMLMetaElement>('meta[name="description"]')?.setAttribute('content', '桌面信号、表情与音效。自定义轮盘、GIF 配音频、带声音短视频，支持 Windows 和 Apple 芯片 Mac。');
-    const guide = document.querySelector<HTMLAnchorElement>('.getStarted a');
+    const guide = document.querySelector<HTMLAnchorElement>('[data-build-guide]');
     if (guide) guide.href = 'https://github.com/xiaoyu607/LOL-Pings-DeskSignal-App/blob/main/README.zh-CN.md#本地运行';
   }
   const link = document.querySelector<HTMLAnchorElement>('[data-language-link]');

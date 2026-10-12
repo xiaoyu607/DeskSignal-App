@@ -10,6 +10,7 @@ Move to choose. Release or click to send. No mouse hold needed.</p>
   <a href="package.json"><img src="https://img.shields.io/badge/source-v0.5.5-79c99e" alt="Source version 0.5.5"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/source-MIT-79c99e" alt="Source code license: MIT"></a>
 </p>
+<p><strong><a href="https://github.com/xiaoyu607/LOL-Pings-DeskSignal-App/releases/download/v0.5.5/DeskSignal-Setup-0.5.5.exe">Download for Windows x64</a></strong> · <strong><a href="https://github.com/xiaoyu607/LOL-Pings-DeskSignal-App/releases/download/v0.5.5/DeskSignal-0.5.5-arm64.dmg">Download for Mac (Apple Silicon)</a></strong></p>
 <p><a href="https://github.com/xiaoyu607/LOL-Pings-DeskSignal-App/archive/refs/heads/main.zip">Download source</a> · <a href="assets/media/desksignal-demo.mp4">Watch the demo</a> · <a href="NOTES.md">Implementation notes</a></p>
 
 <p><a href="https://github.com/xiaoyu607/LOL-Pings-DeskSignal-App">If you like it, give it a star 🌟</a></p>

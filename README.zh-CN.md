@@ -10,6 +10,7 @@
   <a href="package.json"><img src="https://img.shields.io/badge/source-v0.5.5-79c99e" alt="Source version 0.5.5"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/source-MIT-79c99e" alt="Source code license: MIT"></a>
 </p>
+<p><strong><a href="https://github.com/xiaoyu607/LOL-Pings-DeskSignal-App/releases/download/v0.5.5/DeskSignal-Setup-0.5.5.exe">下载 Windows x64 安装包</a></strong> · <strong><a href="https://github.com/xiaoyu607/LOL-Pings-DeskSignal-App/releases/download/v0.5.5/DeskSignal-0.5.5-arm64.dmg">下载 Mac（Apple 芯片）</a></strong></p>
 <p><a href="https://github.com/xiaoyu607/LOL-Pings-DeskSignal-App/archive/refs/heads/main.zip">下载源码</a> · <a href="assets/media/desksignal-demo.mp4">观看演示视频</a> · <a href="NOTES.zh-CN.md">实现说明</a></p>
 
 <p><a href="https://github.com/xiaoyu607/LOL-Pings-DeskSignal-App">喜欢就给一个星星吧 🌟</a></p>

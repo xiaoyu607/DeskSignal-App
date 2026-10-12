@@ -12,3 +12,5 @@ The review focused on native Windows/macOS input hooks and cancellation, center/
 - Public installer links are added to the README only after published release assets are verified. Both installers receive a SHA-256 manifest.
 
 This review and automated checks do not replace interactive Windows desktop tests. Mac wheel and custom-media operation was verified interactively during development. The packages are unsigned on Windows and ad-hoc signed / not notarized on macOS. Networking across different devices and mainland China relay reachability still require live tests.
+
+Public release: [v0.5.5](https://github.com/xiaoyu607/LOL-Pings-DeskSignal-App/releases/tag/v0.5.5). Both platform release jobs passed; installer downloads and checksum assets are published.
