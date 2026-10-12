@@ -1,57 +1,59 @@
-# LOL Pings-DeskSignal-App 改动说明
+# LOL Pings-DeskSignal-App change notes
 
-当前完整版本：**0.5.5** · 维护者：[xiaoyu607](https://github.com/xiaoyu607) · 更新日期：2026-10-12。
+**English** · [简体中文](CHANGELOG.zh-CN.md)
 
-DeskSignal 在 [lolPing 原仓库](https://github.com/darrenprx/lolPing) 的基础上改进。源码的 MIT 版权与许可声明保留在 [LICENSE](LICENSE)。下列项目是本改版的实际变化；原有房间、加密、多显示器和基础信号能力继续沿用。
+Complete version: **0.5.5** · Maintainer: [xiaoyu607](https://github.com/xiaoyu607) · Updated: 2026-10-12.
 
-## 品牌、界面与展示
+DeskSignal is improved on the basis of the [original lolPing repository](https://github.com/darrenprx/lolPing). Required MIT notices remain in [LICENSE](LICENSE). Existing room encryption, networking, multiple-display support and base signal effects are retained.
 
-- 应用命名为 DeskSignal，替换为自制品牌图标和菜单栏图标。
-- 重新设计设置控制台，采用青绿色视觉、中文文案与新的导航布局。
-- 新增中文展示主页，包含效果视频、带音效播放和在线轮盘试玩。
-- 展示 MP4 使用应用的真实 overlay 渲染器制作，覆盖轮盘、危险、正在赶来、请求协助、全力进攻及表情。
-- 使用独立应用 ID `io.github.xiaoyu607.desksignal` 与 DeskSignal 设置目录。
+## Brand, settings and introduction
 
-## 0.5.2：按住键位自动显示轮盘
+- DeskSignal branding, custom icons and menu-bar artwork.
+- Redesigned settings studio with teal styling and new navigation.
+- Demo website with the existing introduction MP4, sound and interactive wheel preview.
+- Introduction rendered using the application's actual overlay, showing Danger, On My Way, Assist Me, All In and animated emotes.
+- Independent application ID `io.github.xiaoyu607.desksignal`, data folder and project/update source.
+- English repository introduction and website by default, with Simplified Chinese versions of the README, implementation notes, change notes and website descriptions.
 
-- 按住 Option / Alt 显示信号轮盘，按住 Control / Ctrl 显示表情轮盘，无需长按鼠标左键。
-- 移动鼠标选择扇区，松开触发键发送。
-- 保留设置开关，可切回原有左键拖动手势；鼠标侧键继续使用原有拖动方式。
-- 处理 Esc、右键、组合键和输入状态切换，减少误发送。
+## 0.5.2: Hold a key to open a wheel
 
-## 0.5.3：左键确认与自定义媒体表情
+- Hold Option / Alt for signals or Control / Ctrl for emotes, without holding the left mouse button.
+- Move to choose a slice and release the trigger key to send.
+- Optional switch restores the original click-drag gesture; mouse side buttons keep their drag gesture.
+- Handle cancellation, key combinations and input-state changes to reduce accidental sends.
 
-- 按住触发键时，左键可以确认当前选中的信号；确认后松键不会重复发送。
-- 支持导入 GIF / WebP 动图以及静态图片。
-- 支持为图片或 GIF 配对 MP3、WAV、OGG、M4A 音频。
-- 支持导入自带声音的 MP4 / WebM 短视频。
-- 音频最长 10 秒、最大 10 MB；视频最长 10 秒、最大 20 MB、最长边 1024 像素。
-- 动图最大 5 MB、最长边 1024 像素；静态图片最大 8 MB。
-- 导入时验证文件类型和实际解码结果。声音遵守音效开关、总音量及静音设置。
-- 重发会重播；表情被替换或结束时，停止旧声音并释放媒体资源。
+## 0.5.3: Click confirmation and custom media
 
-## 0.5.4—0.5.5：可设置发送方式及中心发送修复
+- Left click confirms the current selection while the trigger is held; key release does not send again.
+- Import still images, GIF / animated WebP and paired MP3 / WAV / OGG / M4A.
+- Import MP4 / WebM clips with embedded audio.
+- Audio: up to 10 seconds / 10 MB. Video: up to 10 seconds / 20 MB / longest side 1024 px.
+- Animated images: up to 5 MB / longest side 1024 px. Still images: up to 8 MB.
+- Validate media types and actual decoding; honor volume, mute and emote sound settings.
+- Restart on resend; stop audio and release resources when replaced or finished.
 
-- 新增“轮盘发送方式”：仅松键、仅左键、松键或左键均可发送；默认两者均可。
-- 仅左键模式下，松键会取消未确认的选择；仅松键模式下，点击会取消轮盘并交给下方程序。
-- 修复表情轮盘中心的选择与发送。
-- 修复 Option 信号轮盘中心和外圈的左键发送、松键发送及重复发送问题。
-- 信号和表情中心均显示并发送设置中选择的内容；表情中心可用自定义媒体。
+## 0.5.4–0.5.5: Send modes and selectable centers
 
-## 验证结果
+- Select key release only, left click only, or either (default).
+- Click-only mode cancels an unconfirmed selection on key release. Release-only mode cancels on a click and passes it through.
+- Fix emote-center selection and sending.
+- Fix Option signal-wheel center/outer click confirmation, key-release sending and duplicate sends.
+- Both centers follow their configured content, including custom media in the emote center.
 
-- macOS Apple 芯片版本已完成本地打包、签名完整性与 DMG 校验。
-- 人工实测确认：按住键位开轮盘、中心与外圈左键发送、松键发送，以及左键确认后松键不重复。
-- 人工实测确认：GIF 配音频与带音频 MP4 均能显示动画并播放声音。
-- 0.5.5 功能验证：TypeScript 检查通过；735 项自动测试通过、1 项跳过；原生输入辅助程序 525 项测试通过。
-- 媒体测试使用生成的临时素材与真实 Electron 解码器，并验证生产 overlay 的中心、外圈和不重复发送行为。
-- Windows 的构建配置与原生输入代码保留；本次没有在 Windows 实机上验证新增操作。
+## Validation
 
-## 当前范围与限制
+- Local Apple Silicon Mac package, signature integrity and DMG verification completed.
+- Interactive tests confirmed keyboard opening, center/outer confirmation and no duplicate send after clicking then releasing.
+- Interactive tests confirmed animated GIF with paired audio and MP4 with embedded sound.
+- TypeScript checks passed; 735 automated tests passed and one was skipped; 525 native helper tests passed.
+- Real Electron media and production-overlay tests cover import, playback, center/outer selection and duplicate prevention.
+- Windows build configuration is retained; the new interactions were not tested on a Windows device.
 
-- 房间用于同步桌面信号和表情，不提供语音、视频会议或共享屏幕。
-- 保留原有局域网与加密中继连接、最多 8 人和多显示器坐标映射；异地跨设备和国内网络可达性仍需实际验证。
-- 自定义 GIF、音频与视频保存在本机，房间不会传输这些媒体文件或自定义声音，远端继续采用原有静态占位行为。
-- **不包含腾讯会议 / VooV 入会检测、自动弹窗或离会断开。相关开发已撤销。**
-- Mac 包为本地临时签名，未公证；重新构建后可能需要重新开启辅助功能权限。
-- Riot Games 的图像、动画与音效不属于 MIT 源码许可范围，声明保留在 LICENSE 和 README 中。
+## Scope and limitations
+
+- Rooms synchronize desktop signals/emotes, without voice calls, video meetings or screen sharing.
+- Existing LAN, encrypted relays, eight-member limit and display mapping are retained. Live cross-device and mainland China relay tests remain necessary.
+- Imported media and custom audio stay local; rooms do not distribute those files. Remote custom emotes keep the existing static placeholder behavior.
+- Tencent Meeting / VooV detection, automatic prompts and meeting-leave disconnection are not included; that development was reverted.
+- Local Mac packages are ad-hoc signed and not notarized. Rebuilds may require granting Accessibility access again.
+- Riot Games images, animations and sounds are excluded from the MIT source license.

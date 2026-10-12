@@ -751,5 +751,9 @@ body.capture.film .filmHud { display:block; position:fixed;inset:0;pointer-event
 .filmCaption { position:absolute;bottom:65px;left:44px;right:44px;padding:23px 28px;border:1px solid #567e6455;border-radius:18px;background:#0b1916e8; }
 .filmCaption>span { font-size:10px;letter-spacing:.16em;color:#9be7bf; }.filmCaption h2 { margin:8px 0 9px;font-size:28px;font-weight:600;letter-spacing:-.03em; }.filmCaption p { font-size:13px;color:#b0c3b7; }
 body.film .editor { top:16%;height:52%; } body.film .chat { top:24%;height:37%; } body.film .share-pill { top:5%; }
-@media(max-width:700px) { .top nav { gap:14px;font-size:11px; }.top nav a:first-child{display:none}.introHero { padding:70px 0 50px; }.sectionHeading { align-items:start;flex-direction:column;gap:10px; }.videoNote { flex-direction:column;gap:10px; }.features dl { gap:12px; }.getStarted h2 { font-size:36px; }.ping-pick .txt span { font-size:12px; } }
+@media(max-width:700px) { .top nav { gap:14px;font-size:11px; }.top nav a[href="#showcase"]{display:none}.introHero { padding:70px 0 50px; }.sectionHeading { align-items:start;flex-direction:column;gap:10px; }.videoNote { flex-direction:column;gap:10px; }.features dl { gap:12px; }.getStarted h2 { font-size:36px; }.ping-pick .txt span { font-size:12px; } }
 @media(prefers-reduced-motion:reduce) { *,*::before,*::after { scroll-behavior:auto!important;transition:none!important; } }
+
+.feature-note { color:var(--mist); font-size:12px; max-width:800px; margin-top:24px; line-height:1.7; }
+
+@media(max-width:440px) { .top { flex-wrap:wrap; gap:14px; } .top nav { width:100%; justify-content:space-between; } }

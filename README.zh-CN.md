@@ -1,16 +1,32 @@
 # LOL Pings-DeskSignal-App
 
+[English](README.md) · **简体中文**
+
 让桌面默契同步。按住 Option / Alt 自动显示信号轮盘，移动鼠标选择，松开按键发送；按住 Control / Ctrl 自动显示表情轮盘。也可以按左键确认。
 
 DeskSignal 由 xiaoyu607 维护，在 [lolPing 原仓库](https://github.com/darrenprx/lolPing) 的基础上改进，重新设计品牌、图标、设置控制台和展示主页，并扩展键盘轮盘操作与自定义媒体表情。
 
-当前完整版本为 **0.5.5**，本仓库包含完整源码、原生辅助程序、媒体素材、展示主页和自动测试。完整的改动、验证结果及已知限制见 [改动说明](CHANGELOG.md)。
+当前完整版本为 **0.5.5**，本仓库包含完整源码、原生辅助程序、媒体素材、展示主页和自动测试。完整的改动、验证结果及已知限制见 [改动说明](CHANGELOG.zh-CN.md)。
 
 ## 效果展示
+
+[![DeskSignal 演示视频封面](assets/media/desksignal-poster.jpg)](assets/media/desksignal-demo.mp4)
 
 [播放实机渲染演示](assets/media/desksignal-demo.mp4) · [视频封面](assets/media/desksignal-poster.jpg)
 
 视频直接使用应用的真实 overlay 渲染器制作，展示信号轮盘、危险／正在赶来／请求协助／全力进攻信号和表情。主页的播放器带音效，默认静音播放，可自行开启声音。
+
+## 产品特色
+
+| 特色 | 使用方式 |
+| --- | --- |
+| 只按键位开轮盘 | Option / Alt 打开信号轮盘，Control / Ctrl 打开表情轮盘，无需长按左键。 |
+| 自己选择发送方式 | 仅松键、仅左键或两者均可；左键确认后松键不重复发送。 |
+| 轮盘中心也能发送 | 中心信号与表情跟随设置，停在中心即可确认。 |
+| GIF + 自定义音频 | 导入自己的 GIF / WebP 动图，为图片配对 MP3 / WAV / OGG / M4A。 |
+| 带声音的短视频 | 导入自带音频的 MP4 / WebM，最长 10 秒。 |
+| 调整自己的轮盘 | 自定义触发键、扇区、中心内容、显示大小、持续时间及音量。 |
+| 多显示器与共享房间 | 原有多显示器坐标映射和最多 8 人加密房间功能保留。 |
 
 ## 本地运行
 
@@ -63,7 +79,7 @@ npm run dist           # Windows 安装包，需 Windows 开发环境
 - 更新和项目链接指向 `xiaoyu607/LOL-Pings-DeskSignal-App`；仅从本仓库的 Release 获取新版。
 - 房间协议及加密命名空间保留，维持与上游的协议兼容性；跨设备互通仍需实际测试。
 
-源码与构建方式见 [NOTES.md](NOTES.md) 和 [TEARDOWN.md](TEARDOWN.md)。
+源码与构建方式见 [中文实现说明](NOTES.zh-CN.md) 和 [TEARDOWN.md](TEARDOWN.md)。
 
 ## 署名与素材
 

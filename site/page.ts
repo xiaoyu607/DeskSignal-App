@@ -1,4 +1,5 @@
 import pkg from '../package.json';
+import { initLanguage, isChinese } from './language';
 import type { PingId } from '../src/shared/pings';
 import { Autoplay, DEMO_STROKES, HUNG_STROKES } from './autoplay';
 import { initInput, onUserPing } from './input';
@@ -7,7 +8,7 @@ import { DEFAULT_WHEEL_PINGS, textureUrl } from './pings';
 import { isSoundOn, setSoundOn } from './sound';
 import { initFilm } from './film';
 
-const MEANINGS: Record<PingId, string> = {
+const MEANINGS_ZH: Record<PingId, string> = {
   danger: '撤退，这里有危险。',
   push: '推进兵线或防御塔。',
   omw: '我正在赶来。',
@@ -21,6 +22,12 @@ const MEANINGS: Record<PingId, string> = {
   visioncleared: '敌方视野已清除。',
 };
 
+const MEANINGS_EN: Record<PingId, string> = {
+  danger: 'Retreat. Danger here.', push: 'Push the lane or tower.', omw: 'I am on my way.', allin: 'Go all in together.',
+  assist: 'Help me here.', needvision: 'We need vision here.', missing: 'The enemy is missing.', enemyvision: 'Enemy vision here.',
+  generic: 'Look here.', bait: 'Bait the enemy.', visioncleared: 'Enemy vision cleared.',
+};
+
 const $ = <T extends HTMLElement>(sel: string): T => document.querySelector(sel) as T;
 
 function buildLegend(list: HTMLElement): void {
@@ -31,8 +38,8 @@ function buildLegend(list: HTMLElement): void {
     button.className = 'ping-pick';
     button.innerHTML = `<span class="badge"><img alt="" width="44" height="44"></span><span class="txt"><b></b><span></span></span>`;
     (button.querySelector('img') as HTMLImageElement).src = textureUrl(p.icon);
-    (button.querySelector('b') as HTMLElement).textContent = ({danger:'危险',push:'推进',omw:'正在赶来',allin:'全力进攻',assist:'请求协助',needvision:'需要视野',missing:'敌人消失',enemyvision:'敌方视野'} as Record<string,string>)[p.id] ?? p.name;
-    (button.querySelector('.txt span') as HTMLElement).textContent = MEANINGS[p.id];
+    (button.querySelector('b') as HTMLElement).textContent = isChinese() ? ({danger:'危险',push:'推进',omw:'正在赶来',allin:'全力进攻',assist:'请求协助',needvision:'需要视野',missing:'敌人消失',enemyvision:'敌方视野'} as Record<string,string>)[p.id] ?? p.name : p.name;
+    (button.querySelector('.txt span') as HTMLElement).textContent = (isChinese() ? MEANINGS_ZH : MEANINGS_EN)[p.id];
     button.addEventListener('click', () => {
       const r = (button.querySelector('.badge') as HTMLElement).getBoundingClientRect();
       emit('ping:spawn', { id: p.id, x: r.left + window.scrollX + r.width / 2, y: r.top + window.scrollY + r.height / 2 });
@@ -46,7 +53,7 @@ function initSoundToggle(button: HTMLButtonElement): void {
   const render = () => {
     const on = isSoundOn();
     button.setAttribute('aria-pressed', String(on));
-    button.textContent = on ? '音效开启' : '音效关闭';
+    button.textContent = isChinese() ? (on ? '音效开启' : '音效关闭') : (on ? 'Sound on' : 'Sound off');
   };
   button.addEventListener('click', () => {
     setSoundOn(!isSoundOn());
@@ -76,6 +83,7 @@ function pose(stage: HTMLElement, hung: boolean): void {
 }
 
 export function startPage(): void {
+  initLanguage();
   const stage = $<HTMLElement>('#stage');
   const autoplay = new Autoplay(stage, $<HTMLElement>('#cursor'));
 

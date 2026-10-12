@@ -1,16 +1,16 @@
 <!doctype html>
-<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>LOL Pings-DeskSignal-App — 让桌面默契同步</title><meta name="description" content="在桌面上发送动画信号、表情和音效。DeskSignal 支持 Windows 和 Apple 芯片 Mac。">
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LOL Pings-DeskSignal-App — Your desktop, in sync</title><meta name="description" content="Desktop signals, emotes and sound. Customize wheels, GIFs with audio and short videos on Windows and Apple Silicon Mac.">
 <meta name="theme-color" content="#101b18"><link rel="icon" href="./brand/mark.svg" type="image/svg+xml"></head>
 <body>
 <div id="fx" aria-hidden="true"><div id="pings"></div><svg id="wheel" viewBox="-300 -300 600 600"></svg><div id="cursor" class="fake-cursor"><svg viewBox="0 0 20 28" width="20" height="28"><path d="M1.5 1.5v21.2l5.1-4.9 3.4 7.9 3.6-1.5-3.3-7.7h7.1z" fill="#fff" stroke="#000" stroke-width="1.4" stroke-linejoin="round"/></svg></div></div><div id="toasts" hidden></div>
-<header class="top"><a class="brand" href="./"><img src="./brand/mark.svg" width="34" height="34" alt="">DeskSignal</a><nav><a href="#showcase">效果展示</a><a href="#playground">在线试玩</a><a href="https://github.com/xiaoyu607/LOL-Pings-DeskSignal-App">GitHub ↗</a></nav></header>
+<header class="top"><a class="brand" href="./"><img src="./brand/mark.svg" width="34" height="34" alt="">DeskSignal</a><nav><a class="language-link" href="?lang=zh-CN" data-language-link>简体中文</a><a href="#showcase" data-zh="效果展示">Demo</a><a href="#playground" data-zh="在线试玩">Try it</a><a href="https://github.com/xiaoyu607/LOL-Pings-DeskSignal-App">GitHub ↗</a></nav></header>
 <main>
-<section class="introHero"><span class="eyebrow">A SHARED MOMENT, ONE GESTURE AWAY</span><h1>让桌面<br><em>默契同步。</em></h1><p>指一处，发信号。把熟悉的动画、表情和音效带到每一个应用之上，让伙伴一眼看懂你的意思。</p><div class="cta"><a class="btn primary" href="#showcase">看看实际效果 ↓</a><a class="btn quiet" href="https://github.com/xiaoyu607/LOL-Pings-DeskSignal-App">获取源码 ↗</a></div><div class="platforms"><span>⌥ Apple 芯片 Mac</span><span>⊞ Windows 11</span><span>开源 · MIT 代码</span></div></section>
-<section id="showcase" class="showcase"><div class="sectionHeading"><div><span class="eyebrow">01 / SEE IT IN MOTION</span><h2>按住一个键，就有回应。</h2></div><p>真实效果渲染 · 带音效演示</p></div><div class="videoFrame"><video id="showcase-video" controls playsinline muted loop preload="metadata" poster="./media/desksignal-poster.jpg" aria-label="DeskSignal 信号轮盘与表情效果演示"><source src="./media/desksignal-demo.mp4" type="video/mp4">浏览器无法播放视频，可下载 MP4 查看。</video></div><div class="videoNote"><p>打开声音，听到每一个信号的回应。视频中的虚拟桌面使用应用同一套动画渲染器。</p><a href="./media/desksignal-demo.mp4" download>下载演示视频 ↗</a></div></section>
-<section class="hero" id="playground"><div class="sectionHeading"><div><span class="eyebrow">02 / MAKE YOUR MOVE</span><h2>亲手试一次。</h2></div><p>按住 Option 显示轮盘，移动选择，松键发送。</p></div><figure class="demo">
-          <div id="stage" class="stage" role="img" aria-label="A mock Windows desktop. Drag on it to open the ping wheel.">
-            <div class="share-pill"><i></i><span data-zh="你正在共享屏幕">DeskSignal · 桌面效果试玩</span></div>
+<section class="introHero"><span class="eyebrow">A SHARED MOMENT, ONE GESTURE AWAY</span><h1><span data-zh="让桌面">Your desktop,</span><br><em data-zh="默契同步。">in sync.</em></h1><p data-zh="指一处，发信号。把熟悉的动画、表情和音效带到每一个应用之上，让伙伴一眼看懂你的意思。">Point, ping and be understood. Bring familiar signals, animated emotes and your own media to the desktop with a single key.</p><div class="cta"><a class="btn primary" href="#showcase" data-zh="看看实际效果 ↓">Watch the demo ↓</a><a class="btn quiet" href="https://github.com/xiaoyu607/LOL-Pings-DeskSignal-App" data-zh="获取源码 ↗">Get the source ↗</a></div><div class="platforms"><span data-zh="⌥ Apple 芯片 Mac">⌥ Apple Silicon Mac</span><span>⊞ Windows 11</span><span data-zh="开源 · MIT 代码">Open source · MIT code</span></div></section>
+<section id="showcase" class="showcase"><div class="sectionHeading"><div><span class="eyebrow">01 / SEE IT IN MOTION</span><h2 data-zh="按住一个键，就有回应。">Hold a key. Make a point.</h2></div><p data-zh="真实效果渲染 · 带音效演示">Actual overlay rendering · Sound included</p></div><div class="videoFrame"><video id="showcase-video" controls playsinline muted loop preload="metadata" poster="./media/desksignal-poster.jpg" aria-label="DeskSignal ping wheel and emote demonstration" data-zh-label="DeskSignal 信号轮盘与表情效果演示"><source src="./media/desksignal-demo.mp4" type="video/mp4"><span data-zh="浏览器无法播放视频，可下载 MP4 查看。">Your browser cannot play this video. Download the MP4 to watch it.</span></video></div><div class="videoNote"><p data-zh="打开声音，听到每一个信号的回应。视频中的虚拟桌面使用应用同一套动画渲染器。">Enable sound to hear each signal. This original demo has Chinese captions and uses the same overlay renderer as the app.</p><a href="./media/desksignal-demo.mp4" download data-zh="下载演示视频 ↗">Download the demo ↗</a></div></section>
+<section class="hero" id="playground"><div class="sectionHeading"><div><span class="eyebrow">02 / MAKE YOUR MOVE</span><h2 data-zh="亲手试一次。">Try it for yourself.</h2></div><p data-zh="按住 Option 显示轮盘，移动选择，松键发送。">Hold Option / Alt, move to choose, release to send.</p></div><figure class="demo">
+          <div id="stage" class="stage" role="img" aria-label="A virtual desktop. Hold Option or Alt to open the ping wheel, or drag to try it." data-zh-label="虚拟桌面。按住 Option / Alt 打开轮盘，或直接拖动试玩。">
+            <div class="share-pill"><i></i><span data-zh="DeskSignal · 桌面效果试玩">DeskSignal · Desktop preview</span></div>
             <div class="win editor">
               <div class="bar"><span>build-notes.md<span class="nr" data-zh=" (未响应)"> (Not Responding)</span></span><span class="caps">–&ensp;▢&ensp;✕</span></div>
               <div class="body">
@@ -28,12 +28,12 @@
               </div>
             </div>
             <div class="win chat">
-              <div class="bar"><span data-zh="双排开黑">双排开黑</span><span class="caps">–&ensp;▢&ensp;✕</span></div>
+              <div class="bar"><span data-zh="双排开黑">Duo chat</span><span class="caps">–&ensp;▢&ensp;✕</span></div>
               <div class="body scene-default">
-                <p class="them">你看到这个了吗？</p>
-                <p class="me">看我标记的位置</p>
-                <p class="them">桌面上也能发信号？</p>
-                <p class="me">当然，随处都可以。</p>
+                <p class="them" data-zh="你看到这个了吗？">Did you see this?</p>
+                <p class="me" data-zh="看我标记的位置">Look where I pinged.</p>
+                <p class="them" data-zh="桌面上也能发信号？">You can ping the desktop?</p>
+                <p class="me" data-zh="当然，随处都可以。">Yep. Anywhere.</p>
               </div>
               <div class="body scene-hung">
                 <p class="them" data-zh="又卡死了？">did it freeze again?</p>
@@ -50,17 +50,17 @@
                 <div class="hung-btns"><span data-zh="结束任务">End task</span><span class="primary" data-zh="等待">Wait</span></div>
               </div>
             </div>
-            <p class="hint">按住 Option 显示轮盘，无需按左键</p>
+            <p class="hint" data-zh="按住 Option 显示轮盘，无需按左键">Hold Option / Alt to open the wheel—no mouse hold needed.</p>
             <div class="taskbar">
               <span class="apps"><i></i><i></i><i></i><i></i><i></i></span>
               <span class="tray"><img src="./textures/generic_ping.png" alt="" width="16" height="16" /><span>21:47</span></span>
             </div>
           </div>
 
-<figcaption><span class="how">鼠标移到上方桌面，按住 Option / Alt 即可显示轮盘；移动选择，松开按键发送。也支持直接拖动试玩。</span><button id="sound" class="toggle" type="button" aria-pressed="true">音效开启</button></figcaption></figure></section>
-<section class="pings"><div class="sectionHeading"><div><span class="eyebrow">03 / EVERY SIGNAL COUNTS</span><h2>熟悉的信号，新的舞台。</h2></div><p>八个方向，各有含义。</p></div><ul id="legend" class="legend"></ul></section>
-<section class="features"><div class="sectionHeading"><div><span class="eyebrow">04 / BUILT FOR YOUR DESKTOP</span><h2>与你的桌面相处自然。</h2></div></div><dl><div><dt>每个应用，每块屏幕</dt><dd>信号出现在光标附近，支持多显示器和不同缩放比例。</dd></div><div><dt>信号、表情、音效</dt><dd>保留熟悉的轮盘与反馈，也能加入自己的表情图片。</dd></div><div><dt>和伙伴共享默契</dt><dd>创建房间，把信号发送到伙伴的屏幕。支持局域网和加密中继。</dd></div><div><dt>自己的控制台</dt><dd>重新设计的设置界面，可调整触发键、轮盘布局、大小和音量。</dd></div><div><dt>屏幕共享也能看到</dt><dd>共享整个屏幕，让直播或通话中的伙伴看到你的信号。</dd></div><div><dt>随时暂停</dt><dd>Control + Option + P / Ctrl + Alt + P 开关，菜单栏或托盘管理。</dd></div></dl></section>
-<section class="getStarted"><span class="eyebrow">READY WHEN YOU ARE</span><h2>下一次沟通，<br>用一个信号开始。</h2><p>源码已就绪。Mac 版为实验性版本；本仓库尚未发布安装包，可先从源码构建。</p><a class="btn primary" href="https://github.com/xiaoyu607/LOL-Pings-DeskSignal-App#本地运行">查看运行方法 ↗</a></section>
-</main><footer class="foot"><p><b>DeskSignal</b> · 由 <a href="https://github.com/xiaoyu607">xiaoyu607</a> 改版，基于 <a href="https://github.com/darrenprx/lolPing">lolPing 原仓库</a>。</p><p class="legal">代码遵循 MIT；信号和表情的图像、动画及音效 © Riot Games。本项目与 Riot Games 无关联且未获其背书。</p></footer>
-<div class="filmHud" aria-hidden="true"><div class="filmBrand"><img src="./brand/mark.svg" alt="">DeskSignal<span>DESKTOP SIGNAL STUDIO</span></div><div class="filmCaption"><span id="film-step">ONE GESTURE / ONE SIGNAL</span><h2 id="film-caption">让桌面默契同步。</h2><p id="film-detail">按住 Option / Alt，拖动，松开。</p></div></div>
+<figcaption><span class="how" data-zh="鼠标移到上方桌面，按住 Option / Alt 即可显示轮盘；移动选择，松开按键发送。也支持直接拖动试玩。">Move the pointer onto this desktop and hold Option / Alt. Move to choose and release to send. You can also drag to try it.</span><button id="sound" class="toggle" type="button" aria-pressed="true" data-zh="音效开启">Sound on</button></figcaption></figure></section>
+<section class="pings"><div class="sectionHeading"><div><span class="eyebrow">03 / EVERY SIGNAL COUNTS</span><h2 data-zh="熟悉的信号，新的舞台。">Familiar signals. A new stage.</h2></div><p data-zh="八个方向，各有含义。">Eight directions. Eight ways to speak.</p></div><ul id="legend" class="legend"></ul></section>
+<section class="features"><div class="sectionHeading"><div><span class="eyebrow">04 / BUILT FOR YOUR DESKTOP</span><h2 data-zh="与你的桌面相处自然。">Make it your own.</h2></div></div><dl><div><dt data-zh="只按键位，自己选择发送方式">One key, your choice</dt><dd data-zh="无需长按鼠标开轮盘，可选松键、左键或两者确认，确认后不会重复发送。">Open without holding the mouse. Send on key release, left click, or either—with no duplicate send.</dd></div><div><dt data-zh="中心也可以发送">The center counts too</dt><dd data-zh="设置中心信号或表情，不移动到外圈也能确认发送。">Choose a center ping or emote and confirm without moving into an outer slice.</dd></div><div><dt data-zh="自己的 GIF，自己的声音">Your GIFs. Your sound.</dt><dd data-zh="导入 GIF / WebP 动图，为图片配对自己的 MP3、WAV、OGG 或 M4A 音频。">Import GIF or animated WebP and pair a picture with your own MP3, WAV, OGG or M4A audio.</dd></div><div><dt data-zh="带声音的短视频">Short clips with audio</dt><dd data-zh="导入自带声音的 MP4 / WebM，最长 10 秒。">Use MP4 or WebM clips with embedded sound, up to 10 seconds.</dd></div><div><dt data-zh="适合你的轮盘">A wheel that fits you</dt><dd data-zh="在重新设计的设置控制台调整触发键、扇区、中心内容、大小、时长和音量。">Change trigger keys, slices, center content, size, duration and volume in the redesigned settings studio.</dd></div><div><dt data-zh="多屏幕，与伙伴同步">Across screens, with friends</dt><dd data-zh="保留多显示器映射和最多 8 人加密房间。自定义媒体文件仍保存在本机。">Retain multiple-display mapping and encrypted rooms for up to eight people. Custom media files stay local.</dd></div></dl><p class="feature-note" data-zh="自定义音频／视频最长 10 秒。房间不会传输这些媒体或自定义声音，远端采用原有静态占位行为。">Custom audio and video are limited to 10 seconds. Rooms do not distribute these files or custom sound; remote custom emotes keep the existing static placeholder behavior.</p></section>
+<section class="getStarted"><span class="eyebrow">READY WHEN YOU ARE</span><h2><span data-zh="下一次沟通，">Start the conversation</span><br><span data-zh="用一个信号开始。">with a signal.</span></h2><p data-zh="源码已就绪。Mac 版为实验性版本；本仓库尚未发布安装包，可先从源码构建。">The full source is ready. The Mac build is experimental; this repository has no published installer release yet. Build locally to get started.</p><a class="btn primary" href="https://github.com/xiaoyu607/LOL-Pings-DeskSignal-App#run-and-build" data-zh="查看运行方法 ↗">Read the build guide ↗</a></section>
+</main><footer class="foot"><p><b>DeskSignal</b> · <span data-zh="由">Maintained by</span> <a href="https://github.com/xiaoyu607">xiaoyu607</a><span data-zh=" 改版，基于 ">, improved on the basis of the </span><a href="https://github.com/darrenprx/lolPing" data-zh="lolPing 原仓库">original lolPing repository</a><span data-zh="。">.</span></p><p class="legal" data-zh="代码遵循 MIT；信号和表情的图像、动画及音效 © Riot Games。本项目与 Riot Games 无关联且未获其背书。">Source code is MIT licensed. Signal and emote images, animations and sounds © Riot Games. This project is not affiliated with or endorsed by Riot Games.</p></footer>
+<div class="filmHud" aria-hidden="true"><div class="filmBrand"><img src="./brand/mark.svg" alt="">DeskSignal<span>DESKTOP SIGNAL STUDIO</span></div><div class="filmCaption"><span id="film-step">ONE GESTURE / ONE SIGNAL</span><h2 id="film-caption" data-zh="让桌面默契同步。">Your desktop, in sync.</h2><p id="film-detail" data-zh="按住 Option / Alt，拖动，松开。">Hold Option / Alt, move, release.</p></div></div>
 <script type="module" src="./main.ts"></script></body></html>
