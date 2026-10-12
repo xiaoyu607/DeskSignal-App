@@ -1,18 +1,30 @@
-# LOL Pings-DeskSignal-App
+<div align="center">
 
-[English](README.md) · **简体中文**
+<h1>LOL Pings-DeskSignal-App</h1>
+<p><a href="README.md">English</a> · <strong>简体中文</strong></p>
+<p><strong>让桌面默契同步。</strong><br>
+按住 Option / Alt 打开信号轮盘，Control / Ctrl 打开表情轮盘。<br>
+移动鼠标选择，松键或点击发送，无需长按左键。</p>
+<p>
+  <a href="https://github.com/xiaoyu607/LOL-Pings-DeskSignal-App/actions/workflows/ci.yml"><img src="https://img.shields.io/github/actions/workflow/status/xiaoyu607/LOL-Pings-DeskSignal-App/ci.yml?branch=main&amp;label=CI&amp;logo=github" alt="CI status"></a>
+  <a href="package.json"><img src="https://img.shields.io/badge/source-v0.5.5-79c99e" alt="Source version 0.5.5"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/source-MIT-79c99e" alt="Source code license: MIT"></a>
+</p>
+<p><a href="https://github.com/xiaoyu607/LOL-Pings-DeskSignal-App/archive/refs/heads/main.zip">下载源码</a> · <a href="assets/media/desksignal-demo.mp4">观看演示视频</a> · <a href="NOTES.zh-CN.md">实现说明</a></p>
 
-让桌面默契同步。按住 Option / Alt 自动显示信号轮盘，移动鼠标选择，松开按键发送；按住 Control / Ctrl 自动显示表情轮盘。也可以按左键确认。
+</div>
 
 DeskSignal 由 xiaoyu607 维护，在 [lolPing 原仓库](https://github.com/darrenprx/lolPing) 的基础上改进，重新设计品牌、图标、设置控制台和展示主页，并扩展键盘轮盘操作与自定义媒体表情。
 
 当前完整版本为 **0.5.5**，本仓库包含完整源码、原生辅助程序、媒体素材、展示主页和自动测试。完整的改动、验证结果及已知限制见 [改动说明](CHANGELOG.zh-CN.md)。
 
-## 效果展示
+<div align="center">
 
-[![DeskSignal 演示视频封面](assets/media/desksignal-poster.jpg)](assets/media/desksignal-demo.mp4)
+<h2>效果展示</h2>
+<a href="assets/media/desksignal-demo.mp4"><img src="assets/media/desksignal-poster.jpg" alt="播放 DeskSignal 演示视频" width="800"></a>
+<p><a href="assets/media/desksignal-demo.mp4">播放／下载 MP4</a> · <a href="assets/media/desksignal-poster.jpg">视频封面</a></p>
 
-[播放实机渲染演示](assets/media/desksignal-demo.mp4) · [视频封面](assets/media/desksignal-poster.jpg)
+</div>
 
 视频直接使用应用的真实 overlay 渲染器制作，展示信号轮盘、危险／正在赶来／请求协助／全力进攻信号和表情。主页的播放器带音效，默认静音播放，可自行开启声音。
 

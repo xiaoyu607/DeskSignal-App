@@ -1,18 +1,30 @@
-# LOL Pings-DeskSignal-App
+<div align="center">
 
-**English** · [简体中文](README.zh-CN.md)
+<h1>LOL Pings-DeskSignal-App</h1>
+<p><strong>English</strong> · <a href="README.zh-CN.md">简体中文</a></p>
+<p><strong>Desktop signals, emotes and sound—one key away.</strong><br>
+Hold Option / Alt for pings, or Control / Ctrl for emotes.<br>
+Move to choose. Release or click to send. No mouse hold needed.</p>
+<p>
+  <a href="https://github.com/xiaoyu607/LOL-Pings-DeskSignal-App/actions/workflows/ci.yml"><img src="https://img.shields.io/github/actions/workflow/status/xiaoyu607/LOL-Pings-DeskSignal-App/ci.yml?branch=main&amp;label=CI&amp;logo=github" alt="CI status"></a>
+  <a href="package.json"><img src="https://img.shields.io/badge/source-v0.5.5-79c99e" alt="Source version 0.5.5"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/source-MIT-79c99e" alt="Source code license: MIT"></a>
+</p>
+<p><a href="https://github.com/xiaoyu607/LOL-Pings-DeskSignal-App/archive/refs/heads/main.zip">Download source</a> · <a href="assets/media/desksignal-demo.mp4">Watch the demo</a> · <a href="NOTES.md">Implementation notes</a></p>
 
-Desktop signals, emotes and sound—one key away. Hold **Option / Alt** to open the ping wheel or **Control / Ctrl** for emotes, move to choose, then release the key or click to send.
+</div>
 
 DeskSignal is maintained by [xiaoyu607](https://github.com/xiaoyu607) and improved on the basis of the [original lolPing repository](https://github.com/darrenprx/lolPing). It adds a redesigned brand and settings studio, keyboard hold gestures, configurable confirmation and custom media emotes.
 
 Current complete version: **0.5.5**. This repository includes the source, native input helper, media assets, demo website and automated tests. See the [change notes](CHANGELOG.md) and [implementation notes](NOTES.md).
 
-## Watch the demo
+<div align="center">
 
-[![Watch the DeskSignal demo](assets/media/desksignal-poster.jpg)](assets/media/desksignal-demo.mp4)
+<h2>Watch the demo</h2>
+<a href="assets/media/desksignal-demo.mp4"><img src="assets/media/desksignal-poster.jpg" alt="Watch the DeskSignal demo" width="800"></a>
+<p><a href="assets/media/desksignal-demo.mp4">Play / download the MP4</a> · <a href="assets/media/desksignal-poster.jpg">Poster</a></p>
 
-[Play / download the MP4](assets/media/desksignal-demo.mp4) · [Poster](assets/media/desksignal-poster.jpg)
+</div>
 
 The original introduction video has Chinese captions and sound. It demonstrates the actual application overlay renderer: the wheel, Danger, On My Way, Assist Me, All In and an animated emote. The desktop scene is authored for the demonstration. The website includes a video player and an interactive wheel preview.
 
