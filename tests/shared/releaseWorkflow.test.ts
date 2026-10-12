@@ -20,6 +20,7 @@ describe('release workflow', () => {
     expect(create).toMatch(/gh release create "\$RELEASE_TAG"[^\n]*--draft/);
     expect(create).toContain('--target "$GITHUB_SHA"');
     expect(create).toContain('The existing tag points to another commit');
+    expect(create).toContain("|| existing=''");
     expect(create).toMatch(/gh release list[^\n]*--json tagName/); // a draft is found by listing, not by `gh release view`
     expect(create).toMatch(/grep -Fx "\$RELEASE_TAG" > \/dev\/null/); // not -q: grep reads the whole list, so gh never gets a broken pipe
   });

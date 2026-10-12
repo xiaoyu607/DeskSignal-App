@@ -39,7 +39,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           GH_REPO: ${{ github.repository }}
         run: |
-          existing=$(gh api "repos/$GH_REPO/git/ref/tags/$RELEASE_TAG" --jq ' .object.sha' 2>/dev/null || true)
+          existing=$(gh api "repos/$GH_REPO/git/ref/tags/$RELEASE_TAG" --jq '.object.sha' 2>/dev/null) || existing=''
           if [[ -n "$existing" && "$existing" != "$GITHUB_SHA" ]]; then
             echo "The existing tag points to another commit; refusing to replace it." >&2
             exit 1
