@@ -126,7 +126,7 @@ describe('RelayPool', () => {
     vi.advanceTimersByTime(1000);
     from(URLS[1], first);
     expect(events.filter((e) => e.id === first.id)).toHaveLength(2);
-  });
+  }, 15_000); // 513 real Schnorr signatures plus verification can exceed 5 s on Windows CI.
 
   it('caps incoming events at 200 per second across relays', () => {
     pool.start();

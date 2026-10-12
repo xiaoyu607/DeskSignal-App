@@ -12,6 +12,8 @@
 </p>
 <p><a href="https://github.com/xiaoyu607/LOL-Pings-DeskSignal-App/archive/refs/heads/main.zip">下载源码</a> · <a href="assets/media/desksignal-demo.mp4">观看演示视频</a> · <a href="NOTES.zh-CN.md">实现说明</a></p>
 
+<p><a href="https://github.com/xiaoyu607/LOL-Pings-DeskSignal-App">喜欢就给一个星星吧 🌟</a></p>
+
 </div>
 
 DeskSignal 由 xiaoyu607 维护，在 [lolPing 原仓库](https://github.com/darrenprx/lolPing) 的基础上改进，重新设计品牌、图标、设置控制台和展示主页，并扩展键盘轮盘操作与自定义媒体表情。

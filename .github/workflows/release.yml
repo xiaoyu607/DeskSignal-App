@@ -4,6 +4,19 @@ name: Release
 on:
   push:
     tags: ['v*']
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Version tag matching package.json (for example v0.5.5)'
+        required: true
+        default: 'v0.5.5'
+
+concurrency:
+  group: release-${{ github.event.inputs.tag || github.ref_name }}
+  cancel-in-progress: false
+
+env:
+  RELEASE_TAG: ${{ github.event.inputs.tag || github.ref_name }}
 
 permissions:
   contents: write
@@ -14,16 +27,25 @@ jobs:
     steps:
       - uses: actions/checkout@v7
       - name: Check the tag matches package.json
-        run: test "v$(node -p "require('./package.json').version")" = "$GITHUB_REF_NAME"
+        shell: bash
+        run: |
+          [[ "$RELEASE_TAG" =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]]
+          test "v$(node -p "require('./package.json').version")" = "$RELEASE_TAG"
       # A draft: installed apps look for latest.yml in the newest published release, so it must not show up before the Windows job has
       # uploaded it (every check would fail with "Cannot find latest.yml" meanwhile). The publish job at the end makes it public.
       # A draft is not found by `gh release view`, so look for the tag in the list. A re-run keeps the release it already has.
       - name: Create the release
         env:
           GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
         run: |
-          gh release list --limit 200 --json tagName --jq '.[].tagName' | grep -Fx "$GITHUB_REF_NAME" > /dev/null \
-            || gh release create "$GITHUB_REF_NAME" --title "DeskSignal $GITHUB_REF_NAME" --generate-notes --draft
+          existing=$(gh api "repos/$GH_REPO/git/ref/tags/$RELEASE_TAG" --jq ' .object.sha' 2>/dev/null || true)
+          if [[ -n "$existing" && "$existing" != "$GITHUB_SHA" ]]; then
+            echo "The existing tag points to another commit; refusing to replace it." >&2
+            exit 1
+          fi
+          gh release list --limit 200 --json tagName --jq '.[].tagName' | grep -Fx "$RELEASE_TAG" > /dev/null \
+            || gh release create "$RELEASE_TAG" --target "$GITHUB_SHA" --title "DeskSignal $RELEASE_TAG" --notes-file docs/release-0.5.5.md --draft
 
   windows:
     needs: release
@@ -37,19 +59,29 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
+      - run: npm run typecheck
       - run: npm run test:helper
       - run: npm test
+      - run: npm run build:site
       - run: npm run dist
+      - name: Check the installer
+        shell: pwsh
+        run: |
+          $version = $env:RELEASE_TAG.Substring(1)
+          $installer = "release/DeskSignal-Setup-$version.exe"
+          if (!(Test-Path $installer) -or (Get-Item $installer).Length -lt 1000000) { throw "Missing or truncated installer" }
+          if (!(Test-Path "$installer.blockmap") -or !(Test-Path "release/latest.yml")) { throw "Missing update files" }
+          Get-FileHash $installer -Algorithm SHA256 | Format-List
       - name: Upload the installer and its update files
         shell: bash
         env:
           GH_TOKEN: ${{ github.token }}
         # latest.yml and the blockmap are what electron-updater in an installed DeskSignal reads to find and fetch this version.
         run: |
-          gh release upload "$GITHUB_REF_NAME" \
-            "release/DeskSignal-Setup-${GITHUB_REF_NAME#v}.exe" \
+          gh release upload "$RELEASE_TAG" \
+            "release/DeskSignal-Setup-${RELEASE_TAG#v}.exe" \
             "release/latest.yml" \
-            "release/DeskSignal-Setup-${GITHUB_REF_NAME#v}.exe.blockmap" \
+            "release/DeskSignal-Setup-${RELEASE_TAG#v}.exe.blockmap" \
             --clobber
 
   mac:
@@ -64,14 +96,20 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
+      - run: npm run typecheck
       - run: npm run test:helper
       - run: npm test
+      - run: npm run build:site
       - run: npm run dist:mac
-      - run: codesign --verify --deep --strict "release/mac-arm64/DeskSignal.app"
+      - name: Verify the Mac bundle and disk image
+        run: |
+          codesign --verify --deep --strict "release/mac-arm64/DeskSignal.app"
+          file "release/mac-arm64/DeskSignal.app/Contents/Resources/hook-helper" | grep -q arm64
+          hdiutil verify "release/DeskSignal-${RELEASE_TAG#v}-arm64.dmg"
       - name: Upload the disk image
         env:
           GH_TOKEN: ${{ github.token }}
-        run: gh release upload "$GITHUB_REF_NAME" "release/DeskSignal-${GITHUB_REF_NAME#v}-arm64.dmg" --clobber
+        run: gh release upload "$RELEASE_TAG" "release/DeskSignal-${RELEASE_TAG#v}-arm64.dmg" --clobber
 
   # Both installers and the update files are uploaded: only now does the draft become the latest release.
   publish:
@@ -82,4 +120,13 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
           GH_REPO: ${{ github.repository }}
-        run: gh release edit "$GITHUB_REF_NAME" --draft=false
+        run: |
+          gh release download "$RELEASE_TAG" --dir verification
+          test -s "verification/DeskSignal-Setup-${RELEASE_TAG#v}.exe"
+          test -s "verification/DeskSignal-Setup-${RELEASE_TAG#v}.exe.blockmap"
+          test -s "verification/latest.yml"
+          test -s "verification/DeskSignal-${RELEASE_TAG#v}-arm64.dmg"
+          cd verification
+          sha256sum "DeskSignal-Setup-${RELEASE_TAG#v}.exe" "DeskSignal-${RELEASE_TAG#v}-arm64.dmg" > SHA256SUMS.txt
+          gh release upload "$RELEASE_TAG" SHA256SUMS.txt --clobber
+          gh release edit "$RELEASE_TAG" --draft=false

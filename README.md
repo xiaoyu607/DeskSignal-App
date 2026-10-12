@@ -12,6 +12,8 @@ Move to choose. Release or click to send. No mouse hold needed.</p>
 </p>
 <p><a href="https://github.com/xiaoyu607/LOL-Pings-DeskSignal-App/archive/refs/heads/main.zip">Download source</a> · <a href="assets/media/desksignal-demo.mp4">Watch the demo</a> · <a href="NOTES.md">Implementation notes</a></p>
 
+<p><a href="https://github.com/xiaoyu607/LOL-Pings-DeskSignal-App">If you like it, give it a star 🌟</a></p>
+
 </div>
 
 DeskSignal is maintained by [xiaoyu607](https://github.com/xiaoyu607) and improved on the basis of the [original lolPing repository](https://github.com/darrenprx/lolPing). It adds a redesigned brand and settings studio, keyboard hold gestures, configurable confirmation and custom media emotes.
