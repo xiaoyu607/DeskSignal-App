@@ -1,15 +1,19 @@
 name: Release
 
-# Push a tag that matches package.json's version (for example v0.2.0) to build both installers and publish them.
+# Development/unsigned releases require explicit dispatch. Tag creation must not
+# start an unsigned build that could overwrite a signed release.
 on:
-  push:
-    tags: ['v*']
   workflow_dispatch:
     inputs:
       tag:
         description: 'Version tag matching package.json (for example v0.5.5)'
         required: true
         default: 'v0.5.5'
+      allow_unsigned:
+        description: 'Explicitly publish unsigned Windows / ad-hoc Mac development packages'
+        type: boolean
+        required: true
+        default: false
 
 concurrency:
   group: release-${{ github.event.inputs.tag || github.ref_name }}
@@ -23,6 +27,7 @@ permissions:
 
 jobs:
   release:
+    if: github.ref == 'refs/heads/main' && inputs.allow_unsigned == true
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
@@ -39,6 +44,11 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           GH_REPO: ${{ github.repository }}
         run: |
+          published=$(gh release list --limit 200 --json tagName,isDraft --jq ".[] | select(.tagName == \"$RELEASE_TAG\" and .isDraft == false) | .tagName")
+          if [[ -n "$published" ]]; then
+            echo "Refusing to overwrite a published release." >&2
+            exit 1
+          fi
           existing=$(gh api "repos/$GH_REPO/git/ref/tags/$RELEASE_TAG" --jq '.object.sha' 2>/dev/null) || existing=''
           if [[ -n "$existing" && "$existing" != "$GITHUB_SHA" ]]; then
             echo "The existing tag points to another commit; refusing to replace it." >&2

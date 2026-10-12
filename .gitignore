@@ -8,3 +8,10 @@ native/hook-helper/build/
 .DS_Store
 tools/extract-assets/.cache/
 tools/extract-assets/__pycache__/
+
+# Signing output and credentials stay local; never commit keys.
+release-signed/
+.signing/
+*.p12
+*.pfx
+*.p8

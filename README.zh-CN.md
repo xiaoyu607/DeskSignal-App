@@ -31,6 +31,8 @@ DeskSignal 由 xiaoyu607 维护，在 [lolPing 原仓库](https://github.com/dar
 
 视频直接使用应用的真实 overlay 渲染器制作，展示信号轮盘、危险／正在赶来／请求协助／全力进攻信号和表情。主页的播放器带音效，默认静音播放，可自行开启声音。
 
+签名状态：v0.5.5 的 Windows 包未正式签名，Mac 包为临时签名、尚未公证。[正式签名与公证配置](docs/SIGNING.zh-CN.md)。
+
 ## 产品特色
 
 | 特色 | 使用方式 |

@@ -28,7 +28,9 @@
     "media": "npm run build:site && electron tools/capture-media/capture.mjs",
     "video": "npm run build:site && electron tools/capture-video.mjs && npm run build:site",
     "dev:settings": "vite --config preview/vite.config.ts",
-    "test:media": "npm run build && electron tools/media-smoke.mjs"
+    "test:media": "npm run build && electron tools/media-smoke.mjs",
+    "dist:mac:signed": "node -e \"require('./build/signed.cjs')\" && npm run build:helper && electron-vite build && electron-builder --config build/signed.cjs --mac --arm64 --publish never && node tools/signing/verify-mac.mjs",
+    "dist:win:signed": "node -e \"require('./build/signed.cjs')\" && npm run build:helper && electron-vite build && electron-builder --config build/signed.cjs --win --publish never && powershell -NoProfile -ExecutionPolicy Bypass -File tools/signing/verify-win.ps1"
   },
   "devDependencies": {
     "@fluentui/react-components": "9.74.9",

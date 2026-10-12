@@ -15,6 +15,13 @@ function job(name: string): string {
 }
 
 describe('release workflow', () => {
+  it('requires explicit consent for unsigned releases and never overwrites a published release', () => {
+    expect(workflow).not.toMatch(/\n  push:/);
+    expect(workflow).toContain('default: false');
+    expect(job('release')).toContain('inputs.allow_unsigned == true');
+    expect(job('release')).toContain('Refusing to overwrite a published release');
+    expect(job('release').indexOf('Refusing to overwrite')).toBeLessThan(job('release').indexOf('gh release create'));
+  });
   it('creates the release as a draft, and only when none exists for the tag (a re-run keeps working)', () => {
     const create = job('release');
     expect(create).toMatch(/gh release create "\$RELEASE_TAG"[^\n]*--draft/);

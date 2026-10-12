@@ -31,6 +31,8 @@ Current complete version: **0.5.5**. This repository includes the source, native
 
 The original introduction video has Chinese captions and sound. It demonstrates the actual application overlay renderer: the wheel, Danger, On My Way, Assist Me, All In and an animated emote. The desktop scene is authored for the demonstration. The website includes a video player and an interactive wheel preview.
 
+Signing status: v0.5.5 is unsigned on Windows and ad-hoc signed / not notarized on Mac. [Signed release setup](docs/SIGNING.md).
+
 ## Product features
 
 | Feature | What you can do |
