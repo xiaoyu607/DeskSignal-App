@@ -1,0 +1,31 @@
+{
+  "width": 1600,
+  "height": 900,
+  "fps": 30,
+  "duration": 16.602,
+  "frames": 360,
+  "cues": [
+    {
+      "file": "sounds/SRP_12.wav",
+      "at": 2.5460999999940395
+    },
+    {
+      "file": "sounds/OnMyWay.wav",
+      "at": 5.446
+    },
+    {
+      "file": "sounds/ComeHere.wav",
+      "at": 8.346299999982119
+    },
+    {
+      "file": "sounds/SRP_4.wav",
+      "at": 11.246
+    },
+    {
+      "file": "emotes/bee_happy.ogg",
+      "at": 12.6985
+    }
+  ],
+  "source": "Application overlay renderer; authored virtual desktop",
+  "errors": []
+}

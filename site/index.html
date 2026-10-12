@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DeskSignal — 让桌面默契同步</title><meta name="description" content="在桌面上发送动画信号、表情和音效。DeskSignal 支持 Windows 和 Apple 芯片 Mac。">
+<meta name="theme-color" content="#101b18"><link rel="icon" href="./brand/mark.svg" type="image/svg+xml"></head>
+<body>
+<div id="fx" aria-hidden="true"><div id="pings"></div><svg id="wheel" viewBox="-300 -300 600 600"></svg><div id="cursor" class="fake-cursor"><svg viewBox="0 0 20 28" width="20" height="28"><path d="M1.5 1.5v21.2l5.1-4.9 3.4 7.9 3.6-1.5-3.3-7.7h7.1z" fill="#fff" stroke="#000" stroke-width="1.4" stroke-linejoin="round"/></svg></div></div><div id="toasts" hidden></div>
+<header class="top"><a class="brand" href="./"><img src="./brand/mark.svg" width="34" height="34" alt="">DeskSignal</a><nav><a href="#showcase">效果展示</a><a href="#playground">在线试玩</a><a href="https://github.com/xiaoyu607/DeskSignal-App">GitHub ↗</a></nav></header>
+<main>
+<section class="introHero"><span class="eyebrow">A SHARED MOMENT, ONE GESTURE AWAY</span><h1>让桌面<br><em>默契同步。</em></h1><p>指一处，发信号。把熟悉的动画、表情和音效带到每一个应用之上，让伙伴一眼看懂你的意思。</p><div class="cta"><a class="btn primary" href="#showcase">看看实际效果 ↓</a><a class="btn quiet" href="https://github.com/xiaoyu607/DeskSignal-App">获取源码 ↗</a></div><div class="platforms"><span>⌥ Apple 芯片 Mac</span><span>⊞ Windows 11</span><span>开源 · MIT 代码</span></div></section>
+<section id="showcase" class="showcase"><div class="sectionHeading"><div><span class="eyebrow">01 / SEE IT IN MOTION</span><h2>按住一个键，就有回应。</h2></div><p>真实效果渲染 · 带音效演示</p></div><div class="videoFrame"><video id="showcase-video" controls playsinline muted loop preload="metadata" poster="./media/desksignal-poster.jpg" aria-label="DeskSignal 信号轮盘与表情效果演示"><source src="./media/desksignal-demo.mp4" type="video/mp4">浏览器无法播放视频，可下载 MP4 查看。</video></div><div class="videoNote"><p>打开声音，听到每一个信号的回应。视频中的虚拟桌面使用应用同一套动画渲染器。</p><a href="./media/desksignal-demo.mp4" download>下载演示视频 ↗</a></div></section>
+<section class="hero" id="playground"><div class="sectionHeading"><div><span class="eyebrow">02 / MAKE YOUR MOVE</span><h2>亲手试一次。</h2></div><p>按住 Option 显示轮盘，移动选择，松键发送。</p></div><figure class="demo">
+          <div id="stage" class="stage" role="img" aria-label="A mock Windows desktop. Drag on it to open the ping wheel.">
+            <div class="share-pill"><i></i><span data-zh="你正在共享屏幕">DeskSignal · 桌面效果试玩</span></div>
+            <div class="win editor">
+              <div class="bar"><span>build-notes.md<span class="nr" data-zh=" (未响应)"> (Not Responding)</span></span><span class="caps">–&ensp;▢&ensp;✕</span></div>
+              <div class="body">
+                <p><b class="k" style="--w: 14%"></b><b style="--w: 38%"></b></p>
+                <p><b class="s" style="--w: 52%"></b></p>
+                <p></p>
+                <p><b class="k" style="--w: 10%"></b><b style="--w: 22%"></b><b class="n" style="--w: 8%"></b></p>
+                <p class="in"><b style="--w: 44%"></b></p>
+                <p class="in"><b class="s" style="--w: 30%"></b><b style="--w: 18%"></b></p>
+                <p class="in"><b class="k" style="--w: 12%"></b><b style="--w: 34%"></b></p>
+                <p><b style="--w: 6%"></b></p>
+                <p></p>
+                <p><b class="c" style="--w: 46%"></b></p>
+                <p><b class="k" style="--w: 16%"></b><b style="--w: 26%"></b></p>
+              </div>
+            </div>
+            <div class="win chat">
+              <div class="bar"><span data-zh="双排开黑">双排开黑</span><span class="caps">–&ensp;▢&ensp;✕</span></div>
+              <div class="body scene-default">
+                <p class="them">你看到这个了吗？</p>
+                <p class="me">看我标记的位置</p>
+                <p class="them">桌面上也能发信号？</p>
+                <p class="me">当然，随处都可以。</p>
+              </div>
+              <div class="body scene-hung">
+                <p class="them" data-zh="又卡死了？">did it freeze again?</p>
+                <p class="me" data-zh="对，人直接没了">yep, it’s gone missing</p>
+                <p class="them" data-zh="给它标个信号哈哈">ping it lol</p>
+              </div>
+            </div>
+            <!-- The README capture's scene (?capture=hung): a frozen app asking to wait or end it. -->
+            <div class="hung">
+              <div class="bar"><span data-zh="编辑器">Editor</span><span class="caps">✕</span></div>
+              <div class="hung-body">
+                <b data-zh="编辑器 未响应">Editor isn’t responding</b>
+                <p data-zh="你可以等待它响应，或者立即结束它。如果结束，可能会丢失未保存的更改。">You can wait for it to respond or end it now. If you end it, you might lose unsaved changes.</p>
+                <div class="hung-btns"><span data-zh="结束任务">End task</span><span class="primary" data-zh="等待">Wait</span></div>
+              </div>
+            </div>
+            <p class="hint">按住 Option 显示轮盘，无需按左键</p>
+            <div class="taskbar">
+              <span class="apps"><i></i><i></i><i></i><i></i><i></i></span>
+              <span class="tray"><img src="./textures/generic_ping.png" alt="" width="16" height="16" /><span>21:47</span></span>
+            </div>
+          </div>
+
+<figcaption><span class="how">鼠标移到上方桌面，按住 Option / Alt 即可显示轮盘；移动选择，松开按键发送。也支持直接拖动试玩。</span><button id="sound" class="toggle" type="button" aria-pressed="true">音效开启</button></figcaption></figure></section>
+<section class="pings"><div class="sectionHeading"><div><span class="eyebrow">03 / EVERY SIGNAL COUNTS</span><h2>熟悉的信号，新的舞台。</h2></div><p>八个方向，各有含义。</p></div><ul id="legend" class="legend"></ul></section>
+<section class="features"><div class="sectionHeading"><div><span class="eyebrow">04 / BUILT FOR YOUR DESKTOP</span><h2>与你的桌面相处自然。</h2></div></div><dl><div><dt>每个应用，每块屏幕</dt><dd>信号出现在光标附近，支持多显示器和不同缩放比例。</dd></div><div><dt>信号、表情、音效</dt><dd>保留熟悉的轮盘与反馈，也能加入自己的表情图片。</dd></div><div><dt>和伙伴共享默契</dt><dd>创建房间，把信号发送到伙伴的屏幕。支持局域网和加密中继。</dd></div><div><dt>自己的控制台</dt><dd>重新设计的设置界面，可调整触发键、轮盘布局、大小和音量。</dd></div><div><dt>屏幕共享也能看到</dt><dd>共享整个屏幕，让直播或通话中的伙伴看到你的信号。</dd></div><div><dt>随时暂停</dt><dd>Control + Option + P / Ctrl + Alt + P 开关，菜单栏或托盘管理。</dd></div></dl></section>
+<section class="getStarted"><span class="eyebrow">READY WHEN YOU ARE</span><h2>下一次沟通，<br>用一个信号开始。</h2><p>源码已就绪。Mac 版为实验性版本；本仓库尚未发布安装包，可先从源码构建。</p><a class="btn primary" href="https://github.com/xiaoyu607/DeskSignal-App#本地运行">查看运行方法 ↗</a></section>
+</main><footer class="foot"><p><b>DeskSignal</b> · 由 <a href="https://github.com/xiaoyu607">xiaoyu607</a> 改版，基于 <a href="https://github.com/darrenprx/lolPing">lolPing 原仓库</a>。</p><p class="legal">代码遵循 MIT；信号和表情的图像、动画及音效 © Riot Games。本项目与 Riot Games 无关联且未获其背书。</p></footer>
+<div class="filmHud" aria-hidden="true"><div class="filmBrand"><img src="./brand/mark.svg" alt="">DeskSignal<span>DESKTOP SIGNAL STUDIO</span></div><div class="filmCaption"><span id="film-step">ONE GESTURE / ONE SIGNAL</span><h2 id="film-caption">让桌面默契同步。</h2><p id="film-detail">按住 Option / Alt，拖动，松开。</p></div></div>
+<script type="module" src="./main.ts"></script></body></html>

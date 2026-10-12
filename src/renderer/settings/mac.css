@@ -1,0 +1,40 @@
+/* DeskSignal studio: same controls and IPC, an independent visual identity on both platforms. */
+:root { --studio-bg:#f5f8f7; --studio-side:#eaf1ee; --studio-card:#fff; --stroke:#dce7e2; --text3:#61766d; --nav-sel:#dbeae3; --card:var(--studio-card); --card-hover:var(--studio-card); }
+@media (prefers-color-scheme: dark) { :root { --studio-bg:#101b18; --studio-side:#0b1512; --studio-card:#182722; --stroke:#2a3c34; --text3:#9db6a9; --nav-sel:#203b30; } }
+body { font:14px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; -webkit-font-smoothing:antialiased; }
+.app { background:var(--studio-bg); grid-template-columns:218px 1fr; }
+.titlebar { background:var(--studio-side); border-bottom:1px solid var(--stroke); letter-spacing:.04em; }
+nav.side { background:var(--studio-side); padding:20px 12px; gap:6px; border-right:1px solid var(--stroke); }
+.brand { padding:0 8px 24px; gap:10px; }
+.brand img { width:38px; height:38px; }
+.brand b { font-size:18px; letter-spacing:-.04em; }
+.brand .desc { font-size:11px; margin-top:4px; }
+.navItem { height:42px; border-radius:10px; gap:12px; cursor:pointer; font-size:13px; }
+.navItem.sel { background:var(--nav-sel); color:var(--colorBrandForeground1); font-weight:600; }
+.navItem.sel::before { display:none; }
+.navItem:focus-visible,.studioShortcuts button:focus-visible { outline:2px solid var(--colorBrandStroke1); outline-offset:2px; }
+.sideFooter { margin-top:auto; padding:22px 10px 0; color:var(--text3); border-top:1px solid var(--stroke); }
+.sideFooter span { display:block; font-size:9px; letter-spacing:.12em; margin-bottom:6px; }
+.sideFooter small { font-size:11px; }
+main.content { padding:30px 30px 44px; }
+.studioHead { padding-bottom:24px; }
+.studioEyebrow { font-size:10px; font-weight:600; letter-spacing:.15em; color:var(--colorBrandForeground1); }
+.pageTitle { font:600 32px/1.2 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; letter-spacing:-.04em; margin:9px 0; }
+.studioHead p { margin:0; color:var(--text3); font-size:13px; }
+.studioShortcuts { display:flex; gap:8px; flex-wrap:wrap; margin-top:18px; }
+.studioShortcuts button { border:1px solid var(--stroke); border-radius:999px; padding:7px 12px; background:var(--studio-card); color:inherit; font:inherit; font-size:12px; cursor:pointer; }
+.section { margin:30px 2px 12px; font-size:12px; font-weight:600; color:var(--text3); letter-spacing:.04em; }
+.card { border-radius:14px; margin-bottom:8px; min-height:70px; padding:16px; gap:14px; background:var(--studio-card); border:1px solid var(--stroke); }
+.card .icon { color:var(--text3); }
+.desc { line-height:1.5; }
+.card.status { border-radius:18px; padding:20px; background:var(--nav-sel); }
+.statusPing { display:block; width:42px; height:42px; }
+.card.status .dot { display:none; }
+.weBody { grid-template-columns:280px 1fr; gap:16px; }
+.weTile { border-radius:12px; }
+.keys kbd { border-radius:6px; font-family:inherit; }
+[data-platform="mac"] .app { grid-template-rows:52px 1fr; }
+[data-platform="mac"] .titlebar { padding-left:85px; }
+@media (max-width:820px) { .app { grid-template-columns:176px 1fr; } main.content { padding:22px 18px; } .weBody { grid-template-columns:1fr; justify-items:center; } .brand b { font-size:16px; } }
+@media (max-width:760px) { .app { grid-template-columns:1fr; } nav.side { display:none; } .card { flex-wrap:wrap; } .card .ctl { margin-left:auto; } }
+@media (prefers-reduced-motion:reduce) { *,*::before,*::after { scroll-behavior:auto !important; transition:none !important; } }
