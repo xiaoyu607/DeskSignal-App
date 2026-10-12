@@ -19,7 +19,7 @@ function deferred<T>(): Deferred<T> {
   return { promise, resolve, reject };
 }
 
-const INFO: UpdateInfo = { version: '0.5.1', notesUrl: 'https://github.com/xiaoyu607/DeskSignal-App/releases/tag/v0.5.1' };
+const INFO: UpdateInfo = { version: '0.5.1', notesUrl: 'https://github.com/xiaoyu607/LOL-Pings-DeskSignal-App/releases/tag/v0.5.1' };
 
 /** The parts of electron-updater's AppUpdater that WinBackend uses. */
 class FakeUpdater extends EventEmitter {

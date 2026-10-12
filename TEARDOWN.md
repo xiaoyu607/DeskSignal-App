@@ -11,7 +11,7 @@ All statements below are SOURCE evidence from this checkout, rather than inferre
 | Shared rooms | `src/main/roomManager.ts:97`, `src/main/lanTransport.ts:51`, `src/main/relayTransport.ts:26` | Room membership, local UDP and encrypted relay transport. |
 | Encryption | `src/main/roomCrypto.ts:21` | The upstream scrypt namespace and authenticated message encryption are preserved for protocol compatibility. |
 | Independent identity | `src/main/index.ts:36`, `src/main/paths.ts:28` | A separate app ID and DeskSignal settings directory. |
-| Update ownership | `src/main/updateMac.ts:7`, `src/main/updateWin.ts:13`, `package.json` | Release API, notes and package updater point to xiaoyu607/DeskSignal-App. |
+| Update ownership | `src/main/updateMac.ts:7`, `src/main/updateWin.ts:13`, `package.json` | Release API, notes and package updater point to xiaoyu607/LOL-Pings-DeskSignal-App. |
 | Homepage film | `site/film.ts`, `tools/capture-video.mjs` | Authors virtual-desktop gestures, records the real overlay rendering, and mixes original sound assets at emitted cue times. |
 | Settings preview | `preview/main.ts` | Mock preload IPC loads the actual React settings components for browser inspection. |
 

@@ -1,4 +1,4 @@
-# DeskSignal 改动说明
+# LOL Pings-DeskSignal-App 改动说明
 
 当前完整版本：**0.5.5** · 维护者：[xiaoyu607](https://github.com/xiaoyu607) · 更新日期：2026-10-12。
 

@@ -6,12 +6,12 @@
   "description": "Desktop signals, emotes and shared rooms with a redesigned control studio",
   "author": "xiaoyu607 (https://github.com/xiaoyu607)",
   "license": "MIT",
-  "homepage": "https://github.com/xiaoyu607/DeskSignal-App#readme",
+  "homepage": "https://github.com/xiaoyu607/LOL-Pings-DeskSignal-App#readme",
   "repository": {
     "type": "git",
-    "url": "https://github.com/xiaoyu607/DeskSignal-App.git"
+    "url": "https://github.com/xiaoyu607/LOL-Pings-DeskSignal-App.git"
   },
-  "bugs": "https://github.com/xiaoyu607/DeskSignal-App/issues",
+  "bugs": "https://github.com/xiaoyu607/LOL-Pings-DeskSignal-App/issues",
   "main": "out/main/index.js",
   "scripts": {
     "dev": "electron-vite dev",
@@ -125,7 +125,7 @@
       {
         "provider": "github",
         "owner": "xiaoyu607",
-        "repo": "DeskSignal-App"
+        "repo": "LOL-Pings-DeskSignal-App"
       }
     ]
   }

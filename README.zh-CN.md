@@ -1,4 +1,4 @@
-# DeskSignal
+# LOL Pings-DeskSignal-App
 
 让桌面默契同步。按住 Option / Alt 自动显示信号轮盘，移动鼠标选择，松开按键发送；按住 Control / Ctrl 自动显示表情轮盘。也可以按左键确认。
 
@@ -60,7 +60,7 @@ npm run dist           # Windows 安装包，需 Windows 开发环境
 - DeskSignal 名称、自制品牌图标及青绿色设置控制台。
 - 新的中文展示主页，嵌入使用同一渲染器录制的 MP4，并提供在线拖动试玩。
 - 独立应用 ID `io.github.xiaoyu607.desksignal`；设置放在 `DeskSignal/settings.json`，不会覆盖原版。
-- 更新和项目链接指向 `xiaoyu607/DeskSignal-App`；仅从本仓库的 Release 获取新版。
+- 更新和项目链接指向 `xiaoyu607/LOL-Pings-DeskSignal-App`；仅从本仓库的 Release 获取新版。
 - 房间协议及加密命名空间保留，维持与上游的协议兼容性；跨设备互通仍需实际测试。
 
 源码与构建方式见 [NOTES.md](NOTES.md) 和 [TEARDOWN.md](TEARDOWN.md)。

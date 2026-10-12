@@ -17,7 +17,7 @@ window.settingsApi = {
   setEnabled:async(on)=>{status={...status,enabled:on};statusListeners.forEach(cb=>cb(status));},
   previewPing:noop,previewEmote:noop,importEmote:async()=>({ok:false,error:'disk'}),removeEmote:noop,
   getAbout:async()=>({version:'0.5.5',problems:[],limitations:strings('zh-CN','mac').limitations}),
-  openSettingsFolder:noop,openProjectPage:async()=>{window.open('https://github.com/xiaoyu607/DeskSignal-App','_blank','noopener');},
+  openSettingsFolder:noop,openProjectPage:async()=>{window.open('https://github.com/xiaoyu607/LOL-Pings-DeskSignal-App','_blank','noopener');},
   retryHelper:noop,setCapturing:noop,openAccessibility:noop,
   getRoom:async()=>({phase:'idle',code:null,members:[],lan:'off',internet:'off',lonely:false,clockSkew:false,displays:[{number:1,width:1600,height:900,primary:true}]}),
   onRoom:()=>()=>{},createRoom:noop,joinRoom:async()=>({ok:false,error:'failed'}),leaveRoom:noop,muteMember:noop,clipboardRoomCode:async()=>null,copyRoomCode:noop,retryInternet:noop,onShowSection:()=>()=>{},

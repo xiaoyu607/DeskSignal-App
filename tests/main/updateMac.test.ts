@@ -11,8 +11,8 @@ const PAYLOAD = Buffer.alloc(65536, 7);
 const PAYLOAD_SHA = createHash('sha256').update(PAYLOAD).digest('hex');
 const LATEST_URL = `${RELEASES_API}/releases/latest`;
 const DMG_NAME = 'DeskSignal-0.5.1-arm64.dmg';
-const DMG_URL = `https://github.com/xiaoyu607/DeskSignal-App/releases/download/v0.5.1/${DMG_NAME}`;
-const NOTES_URL = 'https://github.com/xiaoyu607/DeskSignal-App/releases/tag/v0.5.1';
+const DMG_URL = `https://github.com/xiaoyu607/LOL-Pings-DeskSignal-App/releases/download/v0.5.1/${DMG_NAME}`;
+const NOTES_URL = 'https://github.com/xiaoyu607/LOL-Pings-DeskSignal-App/releases/tag/v0.5.1';
 
 type Release = typeof fixture;
 const release = (edit: (r: Release) => void = () => undefined): Release => {

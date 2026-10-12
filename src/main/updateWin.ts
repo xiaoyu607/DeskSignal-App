@@ -10,7 +10,7 @@ export const CHECK_TIMEOUT_MS = 30_000;
  */
 export const INSTALL_TOAST_MS = 1500;
 
-const RELEASE_PAGE = 'https://github.com/xiaoyu607/DeskSignal-App/releases/tag/v';
+const RELEASE_PAGE = 'https://github.com/xiaoyu607/LOL-Pings-DeskSignal-App/releases/tag/v';
 
 export interface WinBackendDeps {
   /** LOLPING_UPDATE_TEST_URL: a folder that serves latest.yml, used instead of GitHub. */
