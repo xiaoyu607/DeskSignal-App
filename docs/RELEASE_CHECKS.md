@@ -2,6 +2,7 @@
 
 The review focused on native Windows/macOS input hooks and cancellation, center/outer wheel confirmation, helper shutdown/restart, display coordinate conversion, imported media limits and cleanup, app-protocol paths, platform update sources and installer configuration.
 
+- The application LICENSE is included in packaged files alongside the bundled code and assets.
 - TypeScript checks passed locally.
 - 735 automated tests passed locally; one platform-specific test was skipped.
 - 525 native helper tests passed locally on macOS.
